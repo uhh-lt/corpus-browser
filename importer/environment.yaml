@@ -1,0 +1,10 @@
+name: corpus-browser
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - elasticsearch=8.13
+  - pandas=1.5.3
+  - pip=23.3.2
+  - python=3.11
+  - tqdm=4.66.1
