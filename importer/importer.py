@@ -61,8 +61,10 @@ def create_index(index_name: str) -> None:
             "mappings": {
                 "properties": {
                     "title": {"type": "text"},
-                    "author": {"type": "text"},
+                    "url": {"type": "keyword"},
+                    "html": {"type": "text"},
                     "text": {"type": "text"},
+                    "tag": {"type": "keyword"},
                 }
             }
         },

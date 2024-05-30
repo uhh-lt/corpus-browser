@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@searchkit/instantsearch-client": "^4.13.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-instantsearch": "^7.10.0",
+    "searchkit": "^4.12.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

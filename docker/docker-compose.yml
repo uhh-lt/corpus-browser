@@ -10,6 +10,10 @@ services:
       # http.publish_port=${ELASTICSEARCH_EXPOSED_PORT:-9200}
       - xpack.security.enabled=false # no auth
       - discovery.type=single-node # single node cluster
+      - http.cors.enabled=true
+      - http.cors.allow-origin='*'
+      - http.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization
+      - http.cors.allow-credentials=true
       - ES_JAVA_OPTS=-Xms4096m -Xmx4096m
       - ES_SETTING_CLUSTER_NAME=docker-cluster
       - ES_SETTING_NETWORK_HOST=0.0.0.0

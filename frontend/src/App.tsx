@@ -1,34 +1,44 @@
+import { InstantSearch, SearchBox, Hits, RefinementList, Configure, Pagination } from 'react-instantsearch'
+import { searchClient } from './plugins/SearchKit'
+import HitView from './HitView'
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [clicked, setClicked] = useState<any | undefined>()
+
+  console.log(clicked)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <InstantSearch indexName="teaching" searchClient={searchClient}>
+      <Configure hitsPerPage={5} />
+      <div style={{display: "flex", flexDirection: "row", gap: "16px", height: "100vh"}}>
+        <div style={{width: "10%"}}>
+          <b>Tags</b>
+          <div style={{height: "1px", width: "50%", backgroundColor: "black", marginBottom: "16px"}}></div>
+          <RefinementList attribute="tag" showMore />
+        </div>
+        <div style={{width: "45%", height: "100%", display: "flex", flexDirection: "column"}}>
+            <SearchBox />
+            <div style={{overflowY: "auto", flexGrow: 1}}>
+              <Hits hitComponent={(props) => <HitView {...props} onClick={(hit: any) => setClicked(hit)} />}/>
+            </div>
+            <Pagination />
+        </div>
+        {clicked && (
+          <div style={{width: "45%"}} className="ais-Hits">
+            <ol className="ais-Hits-list">
+              <li className="ais-Hits-item">
+                <div>
+                  <h2>{clicked.title}</h2>
+                  <p>{clicked.tag} - {clicked.url.split("/")[2]} - <a href={clicked.url} target='_blank'>Link to original</a></p>
+                </div>  
+              </li>
+            </ol>
+          </div>
+        )}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </InstantSearch>
+
   )
 }
 
