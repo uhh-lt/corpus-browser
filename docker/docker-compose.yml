@@ -48,13 +48,13 @@ services:
       - kibana
 
   corpus-browser-frontend:
-    image: uhhlt/dwts_frontend:${DWTS_FRONTEND_DOCKER_VERSION:-latest}
+    image: uhhlt/corpus_browser_frontend:latest
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - elasticsearch
     ports:
-      - "${FRONTEND_EXPOSED:-3000}:3000"
+      - "${FRONTEND_EXPOSED:-5173}:5173"
     networks:
       - corpos_browser_network
     profiles:
