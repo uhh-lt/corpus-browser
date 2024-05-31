@@ -55,20 +55,7 @@ def create_index(index_name: str) -> None:
         client.indices.delete(index=index_name)
         print("Deleted existing index '{index_name}'")
 
-    client.indices.create(
-        index=index_name,
-        body={
-            "mappings": {
-                "properties": {
-                    "title": {"type": "text"},
-                    "url": {"type": "keyword"},
-                    "html": {"type": "text"},
-                    "text": {"type": "text"},
-                    "tag": {"type": "keyword"},
-                }
-            }
-        },
-    )
+    client.indices.create(index=index_name)
     print(f"Created index '{index_name}'")
 
 
