@@ -17,7 +17,7 @@ function CorpusOverview() {
             className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100"
           >
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-              University Website Corpus
+              German U15 Corpus
             </h5>
             <p className="font-normal text-gray-700">
               A crawl of German U15 websites. Universities among the most

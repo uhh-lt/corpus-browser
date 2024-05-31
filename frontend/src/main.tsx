@@ -5,7 +5,7 @@ import "./styles.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CorpusOverview from "./CorpusOverview.tsx";
-import Teaching from "./pages/Teaching.tsx";
+import GermanU15 from "./pages/GermanU15.tsx";
 
 const router = createBrowserRouter([
   {
@@ -13,8 +13,8 @@ const router = createBrowserRouter([
     element: <CorpusOverview />,
   },
   {
-    path: "/corpus/teaching",
-    element: <Teaching />,
+    path: "/corpus/germanu15",
+    element: <GermanU15 />,
   },
 ]);
 

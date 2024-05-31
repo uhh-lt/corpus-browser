@@ -17,7 +17,7 @@ import React from "react";
 
 const connector = new ElasticsearchAPIConnector({
   host: import.meta.env.VITE_APP_ELASTICSEARCH,
-  index: "teaching2",
+  index: "germanu15",
 });
 
 // https://docs.elastic.co/search-ui/api/core/configuration
@@ -61,7 +61,7 @@ const SORT_OPTIONS = [
   },
 ];
 
-function Teaching() {
+function GermanU15() {
   return (
     <SearchProvider config={config}>
       <WithSearch
@@ -108,4 +108,4 @@ function Teaching() {
   );
 }
 
-export default Teaching;
+export default GermanU15;
