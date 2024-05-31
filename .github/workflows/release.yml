@@ -35,6 +35,7 @@ jobs:
           push: true
           tags: |
             "uhhlt/corpus_browser_frontend:${{ steps.extract_version.outputs.version }}"
+            "uhhlt/corpus_browser_frontend:latest"
 
       - name: Create Release
         uses: ncipollo/release-action@v1
