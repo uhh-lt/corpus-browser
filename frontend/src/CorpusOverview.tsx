@@ -13,7 +13,7 @@ function CorpusOverview() {
         </p>
         <div className="grid grid-cols-4 gap-4">
           <Link
-            to={"/corpus/teaching"}
+            to={"/corpus/germanu15"}
             className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100"
           >
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
